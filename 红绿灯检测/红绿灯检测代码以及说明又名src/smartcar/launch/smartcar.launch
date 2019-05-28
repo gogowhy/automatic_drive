@@ -1,0 +1,10 @@
+<launch> 
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+  <include file="$(find simple_controller)/launch/simple_controller.launch">
+    <arg name="ttyusb_port" value="/dev/ttyUSB0" />
+  </include>
+
+  <node pkg="smartcar" name="obstacle_detection" type="obstacle_detection.py" output="screen"/>
+  <node pkg="smartcar" name="rplidar_detection" type="rplidar_detection.py" output="screen"/>
+  <node pkg="smartcar" name="velocity_decision" type="velocity_decision.py" output="screen"/>
+</launch>

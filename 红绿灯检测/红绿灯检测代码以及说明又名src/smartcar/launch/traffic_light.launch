@@ -1,0 +1,9 @@
+<launch> 
+  <node pkg="smartcar" name="cameranode" type="cameranode.py" output="screen">
+    <param name="device" value="1"/>
+    <param name="width" value="1280"/>
+    <param name="height" value="720"/>
+    <param name="rates" value="10"/>
+  </node>
+  <node pkg="smartcar" name="traffic_light_detection" type="traffic_light_detection.py" output="screen"/>
+</launch>

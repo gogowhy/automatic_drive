@@ -1,0 +1,8 @@
+<!--  -->
+<launch>
+  <arg name="ttyusb_port" default="/dev/ttyUSB0"/>
+ 
+  <node pkg="simple_controller" type="simple_controller" name="simple_controller" output="screen">
+    <param name="ttyusb_port" type="str" value="$(arg ttyusb_port)" />
+  </node>
+</launch>
